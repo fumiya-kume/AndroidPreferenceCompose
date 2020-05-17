@@ -11,8 +11,8 @@ android {
     buildToolsVersion "29.0.3"
 
     def properties = new Properties()
-    if (file("sercret.properties").exists()) {
-        properties.load(FileInputStream("sercret.properties"))
+    if (new File("sercret.properties").exists()) {
+        properties.load(new FileInputStream("sercret.properties"))
     }
 
     def user = properties.get("user")
