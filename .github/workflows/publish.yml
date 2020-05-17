@@ -13,4 +13,4 @@ jobs:
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: ./gradlew assembleRelease publish
+      run: cd AndroidPreferenceCompose && ./gradlew assembleRelease publish
