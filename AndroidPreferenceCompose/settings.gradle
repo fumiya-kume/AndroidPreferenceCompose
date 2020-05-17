@@ -1,2 +1,3 @@
 rootProject.name='Android Preference Compose'
 include ':app'
+include ':androidpreferencecompose'
