@@ -28,7 +28,7 @@ jobs:
       with:
         author_name: fumiya-kume
         author_email: fumiya.kume@hotmail.com
-        message: "Your commit message"
+        message: "add library files"
         add: "*"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
