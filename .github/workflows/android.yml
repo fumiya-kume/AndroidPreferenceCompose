@@ -19,3 +19,8 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew build
+    - name: Test with Gradle
+      run: cd AndroidPreferenceCompose && ./gradlew test
+    - name: Lint with Gradle
+      run: cd AndroidPreferenceCompose && ./gradlew lint
+    
