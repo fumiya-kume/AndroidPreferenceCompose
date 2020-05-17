@@ -32,3 +32,8 @@ jobs:
         add: "*"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Git push
+      env:
+        USERNAME: fumiya-kume
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: git push
