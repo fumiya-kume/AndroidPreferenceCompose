@@ -22,6 +22,13 @@ jobs:
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: cd AndroidPreferenceCompose && git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && git pull github ${GITHUB_REF} --ff-only && ./gradlew uploadArchives
-    - name: commit file
-      run: git add . && git commit -m 'add library'
+      run: cd AndroidPreferenceCompose && ./gradlew uploadArchives
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: fumiya-kume
+        author_email: fumiya.kume@hotmail.com
+        message: "Your commit message"
+        add: "*"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
