@@ -17,7 +17,7 @@ android {
 
     def user = properties.get("user")
     def token = properties.get("token")
-    def library_version = '0.0.4'
+    def library_version = '0.0.5'
 
     defaultConfig {
         minSdkVersion 21
