@@ -13,7 +13,7 @@ jobs:
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: cd AndroidPreferenceCompose && ./gradlew assembleRelease publish
+      run: ./gradlew assembleRelease publish
   publish-gh-pages:
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: cd AndroidPreferenceCompose && ./gradlew uploadArchives
+      run: ./gradlew uploadArchives
     - name: Commit changes
       uses: EndBug/add-and-commit@v4
       with:
