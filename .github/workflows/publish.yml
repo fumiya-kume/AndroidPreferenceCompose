@@ -5,7 +5,7 @@ on:
       - release/*
 
 jobs:
-  publish:
+  publish-packages:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -14,3 +14,14 @@ jobs:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: cd AndroidPreferenceCompose && ./gradlew assembleRelease publish
+  publish-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish library
+      env:
+        USERNAME: fumiya-kume
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: cd AndroidPreferenceCompose && ./gradlew uploadArchives
+    - name: commit file
+      run: git add . && git commit -m 'add library'
