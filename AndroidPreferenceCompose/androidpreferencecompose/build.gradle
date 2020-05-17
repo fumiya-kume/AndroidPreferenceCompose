@@ -50,7 +50,7 @@ android {
             maven(MavenPublication) {
                 groupId "sushi.nagoya.android_preference"
                 artifactId "android-preference-compose"
-                version "0.0.2"
+                version "0.0.3"
                 artifact sourceJar
                 artifact "$buildDir/outputs/aar/androidpreferencecompose-release.aar"
 
