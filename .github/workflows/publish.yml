@@ -23,13 +23,6 @@ jobs:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: ./gradlew uploadArchives
-      
-    - name: git add
-      env:
-        USERNAME: fumiya-kume
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: git add .
-            
     - name: Commit changes
       uses: EndBug/add-and-commit@v4
       with:
