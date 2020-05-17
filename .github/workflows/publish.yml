@@ -23,5 +23,12 @@ jobs:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: cd AndroidPreferenceCompose && ./gradlew uploadArchives
-    - name: commit file
-      run: git add . && git commit -m 'add library'
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: fumiya-kume
+        author_email: fumiya.kume@hotmail.com
+        message: "add library files"
+        add: "*"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
