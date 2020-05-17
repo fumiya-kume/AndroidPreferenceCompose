@@ -17,6 +17,7 @@ android {
 
     def user = properties.get("user")
     def token = properties.get("token")
+    def library_version = '0.0.4'
 
     defaultConfig {
         minSdkVersion 21
@@ -50,7 +51,7 @@ android {
             maven(MavenPublication) {
                 groupId "sushi.nagoya.android_preference"
                 artifactId "android-preference-compose"
-                version "0.0.3"
+                version library_version
                 artifact sourceJar
                 artifact "$buildDir/outputs/aar/androidpreferencecompose-release.aar"
 
@@ -76,6 +77,22 @@ android {
                     username = user ?: System.getenv("USERNAME")
                     password = token ?: System.getenv("TOKEN")
                 }
+            }
+        }
+    }
+
+    def repo = new File(rootDir, "repository")
+
+    apply plugin: 'maven'
+
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository url: "file://${repo.absolutePath}"
+                pom.version = library_version
+                pom.groupId = 'sushi.nagoya.android_preference'
+                pom.artifactId = 'android-preference-compose'
             }
         }
     }
