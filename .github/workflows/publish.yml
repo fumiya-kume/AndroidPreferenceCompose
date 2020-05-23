@@ -23,7 +23,7 @@ jobs:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: ./gradlew uploadArchives
-    - name: Publish library
+    - name: Git Status
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
