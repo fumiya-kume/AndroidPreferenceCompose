@@ -18,11 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: Gradle tasks
+      env:
+        USERNAME: fumiya-kume
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: ./gradlew tasks
     - name: Publish library
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: ./gradlew uploadArchives && git status
+      run: ./gradlew uploadArchives
     - name: Git Branch
       env:
         USERNAME: fumiya-kume
