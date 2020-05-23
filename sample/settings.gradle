@@ -1,0 +1,2 @@
+rootProject.name='Sample Preference Compose App'
+include ':app'
