@@ -22,7 +22,7 @@ jobs:
       env:
         USERNAME: fumiya-kume
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: ./gradlew uploadArchives
+      run: ./gradlew uploadArchives && git status
     - name: Git Branch
       env:
         USERNAME: fumiya-kume
