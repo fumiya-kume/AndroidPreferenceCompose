@@ -1,2 +1,2 @@
 # AndroidPreferenceCompose
-Compose library for android preference library
+AndroidPreferenceCompose is useful compose UI library.
