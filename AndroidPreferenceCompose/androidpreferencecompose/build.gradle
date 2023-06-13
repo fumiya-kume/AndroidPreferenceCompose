@@ -83,7 +83,7 @@ android {
 
     def repo = new File(rootDir, "repository")
 
-    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
 
 
     uploadArchives {
