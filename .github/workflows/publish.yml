@@ -24,7 +24,7 @@ jobs:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: cd AndroidPreferenceCompose && ./gradlew uploadArchives
     - name: Commit changes
-      uses: EndBug/add-and-commit@v8
+      uses: EndBug/add-and-commit@v9
       with:
         author_name: fumiya-kume
         author_email: fumiya.kume@hotmail.com
