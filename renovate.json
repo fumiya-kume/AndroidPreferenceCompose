@@ -3,6 +3,12 @@
   "extends": [
     "config:base"
   ],
+ "packageRules": [
+    {
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ],
   "separateMultipleMajor": true,
   "separateMinorPatch": true,
   "transitiveRemediation": true
