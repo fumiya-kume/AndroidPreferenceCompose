@@ -45,5 +45,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Test with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew lint
