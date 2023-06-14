@@ -2,8 +2,6 @@ name: Android CI
 
 on:
   push:
-    branches: [ master ]
-  pull_request: 
 
 jobs:
   build:
@@ -14,6 +12,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Build with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew build
   assembleRelease:
@@ -24,6 +23,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Build with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew assembleRelease
   test:
@@ -34,6 +34,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Test with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew test
   lint:
