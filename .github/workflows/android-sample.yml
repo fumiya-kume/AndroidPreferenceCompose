@@ -12,6 +12,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Build with Gradle
       run: cd sample && ./gradlew build
   assembleRelease:
@@ -22,6 +23,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Build with Gradle
       run: cd sample && ./gradlew assembleRelease
   test:
@@ -32,6 +34,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: temurin
     - name: Test with Gradle
       run: cd sample && ./gradlew test
   lint:
@@ -42,5 +45,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+        distribution: temurin
     - name: Test with Gradle
       run: cd sample && ./gradlew lint
