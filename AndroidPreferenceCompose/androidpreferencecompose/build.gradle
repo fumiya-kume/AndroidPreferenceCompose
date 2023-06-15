@@ -7,8 +7,7 @@ task sourceJar(type: Jar) {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 33
 
     def properties = new Properties()
     if (file("sercret.properties").exists()) {
