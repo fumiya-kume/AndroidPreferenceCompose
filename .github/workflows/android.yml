@@ -2,7 +2,9 @@ name: Android CI
 
 on:
   push:
-
+defaults:
+  run:
+    working-directory: AndroidPreferenceCompose
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Build with Gradle
-      run: cd AndroidPreferenceCompose && ./gradlew build
+      run: ./gradlew build
   assembleRelease:
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +31,7 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Build with Gradle
-      run: cd AndroidPreferenceCompose && ./gradlew assembleRelease
+      run: ./gradlew assembleRelease
   test:
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +44,7 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Test with Gradle
-      run: cd AndroidPreferenceCompose && ./gradlew test
+      run: ./gradlew test
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -55,4 +57,4 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Test with Gradle
-      run: cd AndroidPreferenceCompose && ./gradlew lint
+      run: ./gradlew lint
