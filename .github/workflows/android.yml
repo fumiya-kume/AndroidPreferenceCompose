@@ -2,7 +2,9 @@ name: Android CI
 
 on:
   push:
-
+defaults:
+  run:
+    working-directory: AndroidPreferenceCompose
 jobs:
   build:
     runs-on: ubuntu-latest
