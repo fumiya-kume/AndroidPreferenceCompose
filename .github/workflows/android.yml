@@ -13,6 +13,8 @@ jobs:
       with:
         java-version: 17
         distribution: temurin
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
     - name: Build with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew build
   assembleRelease:
@@ -24,6 +26,8 @@ jobs:
       with:
         java-version: 17
         distribution: temurin
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
     - name: Build with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew assembleRelease
   test:
@@ -35,6 +39,8 @@ jobs:
       with:
         java-version: 17
         distribution: temurin
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
     - name: Test with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew test
   lint:
@@ -46,5 +52,7 @@ jobs:
       with:
         java-version: 17
         distribution: temurin
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
     - name: Test with Gradle
       run: cd AndroidPreferenceCompose && ./gradlew lint
