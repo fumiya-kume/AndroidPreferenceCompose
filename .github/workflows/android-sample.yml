@@ -18,10 +18,10 @@ jobs:
       with:
         java-version: 17
         distribution: temurin
-    - name: Setup Gradle
+    - name: assemble${{ matrix.variant }}
       uses: gradle/gradle-build-action@v2
-    - name: Build with Gradle
-      run: ./gradlew assemble${{ matrix.variant }}
+      with:
+        arguments: assemble${{ matrix.variant }}
   test:
     runs-on: ubuntu-latest
     steps:
