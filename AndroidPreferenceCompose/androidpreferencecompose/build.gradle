@@ -26,7 +26,7 @@ android {
         }
     }
     libraryVariants.configureEach { variant ->
-        variant.outputs.all { output ->
+        variant.outputs.configureEach { output ->
             output.packageLibrary.exclude("libs/*")
             if (variant.name == android.buildTypes.release.name) {
                 outputFileName = output.outputFile.name.replace(("-release.aar"), "-${version}.aar")
