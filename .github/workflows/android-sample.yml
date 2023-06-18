@@ -5,6 +5,9 @@ on:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: sample
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -14,7 +17,7 @@ jobs:
         java-version: 11
         distribution: temurin
     - name: Build with Gradle
-      run: cd sample && ./gradlew build
+      run: ./gradlew build
   assembleRelease:
     runs-on: ubuntu-latest
     steps:
