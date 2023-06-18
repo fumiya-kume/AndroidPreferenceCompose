@@ -2,12 +2,11 @@ name: Android Sample CI
 
 on:
   push:
-
+defaults:
+  run:
+    working-directory: sample
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: sample
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
