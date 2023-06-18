@@ -36,9 +36,12 @@ jobs:
         distribution: temurin
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-    - name: TEst with Gradle
+    - name: Test with Gradle
       run: ./gradlew test${{ matrix.variant }}
   lint:
+    strategy:
+      matrix:
+        variant: [Debug, Release]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -49,5 +52,5 @@ jobs:
         distribution: temurin
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-    - name: Build with Gradle
-      run: ./gradlew lint
+    - name: Lint with Gradle
+      run: ./gradlew lint${{ matrix.variant }}
