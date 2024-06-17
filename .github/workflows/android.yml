@@ -19,7 +19,7 @@ jobs:
         java-version: 17
         distribution: temurin
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
     - name: Build with Gradle
       run: ./gradlew assemble${{ matrix.variant }}
   test:
@@ -35,7 +35,7 @@ jobs:
         java-version: 17
         distribution: temurin
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
     - name: TEst with Gradle
       run: ./gradlew test${{ matrix.variant }}
   lint:
@@ -48,6 +48,6 @@ jobs:
         java-version: 17
         distribution: temurin
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
     - name: Build with Gradle
       run: ./gradlew lint
