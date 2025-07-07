@@ -7,7 +7,7 @@ tasks.register('sourceJar', Jar) {
 }
 
 android {
-    namespace 'com.fumiyakume.androidpreferencecompose'
+    namespace 'sushi.nagoya.android_preference.main'
     compileSdkVersion 33
 
     defaultConfig {
