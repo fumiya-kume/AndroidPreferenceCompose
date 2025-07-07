@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'kuu.nagoya.samplepreferencecomposeapp'
     compileSdkVersion 33
 
     defaultConfig {
